@@ -10,7 +10,6 @@ if [ "$STAGED_PHP_FILES" != "" ]; then
     echo "Linting PHP code..."
     for FILE in $STAGED_PHP_FILES; do
         php -l -d display_errors=0 "$PROJECT/$FILE"
-
         if [ $? != 0 ]; then
             echo "Fix the error(s) before commit."
             exit 1
